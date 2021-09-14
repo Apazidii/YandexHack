@@ -1,3 +1,2 @@
-s = "Hello world"
-s = s[5:]
-print(s)
+for i in range(0, 10, 2):
+    print(i)

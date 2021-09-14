@@ -14,6 +14,7 @@ def parse_bridges():
         bridges.append(bridge.find_next_sibling('div', 'bridge'))
         bridge = bridge.find_next_sibling('div', 'bridge')
 
+    bridges.pop(-1)
     return bridges
 
 #print(bridge.find_next_sibling('div', 'bridge'))
