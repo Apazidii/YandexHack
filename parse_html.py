@@ -20,6 +20,9 @@ class Bridge:
     # Сслыка на сайт моста
     link = "gg"
 
+
+# Обрабатывает время
+# разбиваея строку на массив подстрок по 4 символа
 def strf(s):
     l = len(s)
     arr = []
@@ -45,9 +48,9 @@ def parse_bridges():
         bridge.pop(-1)
 
 
+    # Заполнение классов мостов
     res = []
     l = len(bridge)
-
     for i in range(0, l, 6):
         cl = Bridge()
         cl.name = bridge[i + 0].text
@@ -64,12 +67,14 @@ def parse_bridges():
 
 
 arr = parse_bridges()
-# print(arr[0].__dict__)
+
+# Функция конвертации класса в словарь
 def f(k):
     return k.__dict__
-
+# Конвертация массива классов в массив словарей
 arr = list(map(f, arr))
 
-j = json.dumps(arr, indent=4,ensure_ascii=False).encode("utf-8")
+# Создание Json и запись его в файл
+j = json.dumps(arr, indent=4, ensure_ascii=False).encode("utf-8")
 file = open("bridge.json", "w", encoding= "utf-8")
 file.write(j.decode())
