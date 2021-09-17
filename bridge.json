@@ -1,0 +1,216 @@
+[
+    {
+        "name": "Володарский",
+        "link": "/bridges/volodarskij",
+        "river": "Нева",
+        "stop_land_trans": [
+            "2:00",
+            "4:15"
+        ],
+        "start_water_trans": [
+            "2:10",
+            "4:25"
+        ],
+        "stop_water_trans": [
+            "3:40",
+            "5:40"
+        ],
+        "start_land_trans": [
+            "3:45",
+            "5:45"
+        ],
+        "id": "43f60e1b-fd2a-4cbe-825b-aff5b33a4787",
+        "location": [
+            59.877646,
+            30.453283
+        ]
+    },
+    {
+        "name": "Александра Невского",
+        "link": "/bridges/aleksandra-nevskogo",
+        "river": "Нева",
+        "stop_land_trans": [
+            "2:20"
+        ],
+        "start_water_trans": [
+            "2:30"
+        ],
+        "stop_water_trans": [
+            "5:05"
+        ],
+        "start_land_trans": [
+            "5:10"
+        ],
+        "id": "9f6d94bf-e180-4980-9b9d-efe0942b6d48",
+        "location": [
+            59.925655,
+            30.395755
+        ]
+    },
+    {
+        "name": "Большеохтинский",
+        "link": "/bridges/bolsheohtinskij-most",
+        "river": "Нева",
+        "stop_land_trans": [
+            "2:00"
+        ],
+        "start_water_trans": [
+            "2:10"
+        ],
+        "stop_water_trans": [
+            "4:55"
+        ],
+        "start_land_trans": [
+            "5:00"
+        ],
+        "id": "9d333553-f6d2-40ea-a231-54ebaa335b49",
+        "location": [
+            59.94262,
+            30.401585
+        ]
+    },
+    {
+        "name": "Литейный",
+        "link": "/bridges/litejnyj",
+        "river": "Нева",
+        "stop_land_trans": [
+            "1:40"
+        ],
+        "start_water_trans": [
+            "1:50"
+        ],
+        "stop_water_trans": [
+            "4:40"
+        ],
+        "start_land_trans": [
+            "4:45"
+        ],
+        "id": "5927ff19-5b59-4d93-9324-5a3e97874d27",
+        "location": [
+            59.951776,
+            30.349582
+        ]
+    },
+    {
+        "name": "Троицкий",
+        "link": "/bridges/troiczkij",
+        "river": "Нева",
+        "stop_land_trans": [
+            "1:20"
+        ],
+        "start_water_trans": [
+            "1:45"
+        ],
+        "stop_water_trans": [
+            "4:45"
+        ],
+        "start_land_trans": [
+            "4:50"
+        ],
+        "id": "1f93e7e6-d229-4777-9dfd-14d78d457c87",
+        "location": [
+            59.948767,
+            30.327582
+        ]
+    },
+    {
+        "name": "Дворцовый",
+        "link": "/bridges/dvorczovyj",
+        "river": "Большая Нева",
+        "stop_land_trans": [
+            "1:10",
+            "3:10"
+        ],
+        "start_water_trans": [
+            "1:35",
+            "3:20"
+        ],
+        "stop_water_trans": [
+            "2:45",
+            "4:50"
+        ],
+        "start_land_trans": [
+            "2:50",
+            "4:55"
+        ],
+        "id": "c3e7f38e-b990-4b2e-b845-64eb01b75029",
+        "location": [
+            59.941213,
+            30.30817
+        ]
+    },
+    {
+        "name": "Благовещенский",
+        "link": "/bridges/blagoveshhenskij",
+        "river": "Большая Нева",
+        "stop_land_trans": [
+            "1:25",
+            "3:10"
+        ],
+        "start_water_trans": [
+            "1:35",
+            "3:20"
+        ],
+        "stop_water_trans": [
+            "2:40",
+            "4:55"
+        ],
+        "start_land_trans": [
+            "2:45",
+            "5:00"
+        ],
+        "id": "ebac4d9e-8db3-436a-b1cd-928dee379391",
+        "location": [
+            59.934691,
+            30.289538
+        ]
+    },
+    {
+        "name": "Биржевой",
+        "link": "/bridges/birzhevoj",
+        "river": "Малая Нева",
+        "stop_land_trans": [
+            "2:00"
+        ],
+        "start_water_trans": [
+            "2:10"
+        ],
+        "stop_water_trans": [
+            "4:40"
+        ],
+        "start_land_trans": [
+            "4:55"
+        ],
+        "id": "69320125-2160-4312-b97c-0887b19970c7",
+        "location": [
+            59.94627,
+            30.303489
+        ]
+    },
+    {
+        "name": "Тучков",
+        "link": "/bridges/tuchkov",
+        "river": "Малая Нева",
+        "stop_land_trans": [
+            "2:00",
+            "3:35"
+        ],
+        "start_water_trans": [
+            "2:10",
+            "3:45"
+        ],
+        "stop_water_trans": [
+            "2:50",
+            "4:50"
+        ],
+        "start_land_trans": [
+            "2:55",
+            "4:55"
+        ],
+        "id": "17b6a7c7-1e68-484c-8ab3-60c4108d0783",
+        "location": [
+            59.949038,
+            30.285449
+        ]
+    }
+]

@@ -22,7 +22,11 @@ class Bridge:
     # Сслыка на сайт моста
     link = "gg"
 
+    # уникальный индентификатор
     id = 0
+
+    # Местоположение
+    location = []
 
 # Возвращает уникальный id для моста
 def get_random_id():
@@ -38,6 +42,18 @@ def strf(s):
     return arr
 
 
+loc = {
+    "Володарский" :         [59.877646, 30.453283],
+    "Александра Невского" : [59.925655, 30.395755],
+    "Большеохтинский" :     [59.942620, 30.401585],
+    "Литейный" :            [59.951776, 30.349582],
+    "Троицкий" :            [59.948767, 30.327582],
+    "Дворцовый":            [59.941213, 30.308170],
+    "Благовещенский" :      [59.934691, 30.289538],
+    "Биржевой" :            [59.946270, 30.303489],
+    "Тучков" :              [59.949038, 30.285449]
+}
+
 def razbiv_bridge(bridge):
     res = []
     l = len(bridge.stop_water_trans)
@@ -51,6 +67,7 @@ def razbiv_bridge(bridge):
         a.stop_land_trans = bridge.stop_land_trans[i]
         a.start_water_trans = bridge.start_water_trans[i]
         a.start_land_trans = bridge.start_land_trans[i]
+        a.location = bridge.location
         res.append(a)
     return res
 
@@ -85,6 +102,7 @@ def parse_bridges():
         cl.stop_water_trans = strf(bridge[i + 4].text)
         cl.start_land_trans = strf(bridge[i + 5].text)
         cl.id = get_random_id()
+        cl.location = loc[cl.name]
         res.append(cl)
 
     return res
@@ -104,13 +122,11 @@ def cat_list(arr):
     return arr[0]
 
 # Конвертация массива классов в массив словарей
-
-arr = list(map(razbiv_bridge, arr))
-
-
-
-arr = cat_list(arr)
+# arr = list(map(razbiv_bridge, arr))
+# arr = cat_list(arr)
 arr = list(map(f, arr))
+
+
 # Создание Json и запись его в файл
 
 j = json.dumps(arr, indent=4,ensure_ascii=False).encode("utf-8")
@@ -118,9 +134,9 @@ file = open("bridge.json", "w", encoding= "utf-8")
 file.write(j.decode())
 file.close()
 
-df = pd.read_json (r'bridge.json')
-df.to_csv (r'bridge.csv', index = None)
+
 
 # read_file = pd.read_csv (r'bridge.csv')
 # read_file.to_excel (r'bridge.xlsx', index = None, header=True)
 # file.close()
+
