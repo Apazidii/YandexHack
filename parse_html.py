@@ -171,13 +171,15 @@ arr = list(map(f, arr))
 # Создание Json и запись его в файл
 
 j = json.dumps(arr, indent=4,ensure_ascii=False).encode("utf-8")
-file = open("bridge.json", "w", encoding= "utf-8")
+file = open("data/bridge.json", "w", encoding= "utf-8")
 file.write(j.decode())
 file.close()
 
+df = pd.read_json (r'data/bridge.json')
+df.to_csv (r'data/bridge.csv', index = None)
 
 
-# read_file = pd.read_csv (r'bridge.csv')
-# read_file.to_excel (r'bridge.xlsx', index = None, header=True)
-# file.close()
+read_file = pd.read_csv (r'data/bridge.csv')
+read_file.to_excel (r'data/bridge.xlsx', index = None, header=True)
+file.close()
 
