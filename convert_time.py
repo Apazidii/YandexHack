@@ -51,14 +51,18 @@ def time_to_text(now, most):
             ok = 1
 
         ntm = myround(tm, ok)
-        k = ntm == tm
-        tm = ntm
-        m = int(tm % 60)
-        h = int(tm / 60)
-        if k:
+
+
+        if ntm == tm:
             res = "Мост будет разведен через "
-        else:
-            res = "Мост будет разведен примерно через "
+        elif ntm < tm:
+            res = "Мост будет разведен чуть меньше чем через "
+        elif ntm > tm:
+            res = "Мост будет разведен чуть больше чем через "
+
+        m = int(ntm % 60)
+        h = int(ntm / 60)
+
         if (h != 0):
             res = res + str(h) + " час" + get_ending(h)
         if (m != 0):
@@ -185,3 +189,4 @@ def prints():
     print("Фраза Aлисы:", time_to_text(now, most))
     print("----------------------------------")
 
+prints()

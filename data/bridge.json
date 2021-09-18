@@ -19,7 +19,7 @@
             "3:45",
             "5:45"
         ],
-        "id": "d9807c6e-c5e4-4246-b10d-c9f1ba8e98a5",
+        "id": "a743b9be-b83d-4b14-b24c-3386eeee3840",
         "location": [
             59.877646,
             30.453283
@@ -41,7 +41,7 @@
         "start_land_trans": [
             "5:10"
         ],
-        "id": "5a27f748-92b5-47fd-9a76-eb40fab3314d",
+        "id": "d7791cb6-4535-4112-aaf8-5cc83fe80952",
         "location": [
             59.925655,
             30.395755
@@ -63,7 +63,7 @@
         "start_land_trans": [
             "5:00"
         ],
-        "id": "80a022d4-1d82-4e6c-baec-8c2dbc200e1a",
+        "id": "50bf79e0-2ea6-4934-ac41-fbf059a95160",
         "location": [
             59.94262,
             30.401585
@@ -85,7 +85,7 @@
         "start_land_trans": [
             "4:45"
         ],
-        "id": "db8bbb46-450b-4481-9d11-1c5205aaccc5",
+        "id": "62b94a91-1a30-4eb4-a9f4-b493781accea",
         "location": [
             59.951776,
             30.349582
@@ -107,7 +107,7 @@
         "start_land_trans": [
             "4:50"
         ],
-        "id": "e8cfdd7e-c73e-47a4-9ba4-bad0d890c9a6",
+        "id": "26793bec-c8f4-49f3-8ed0-acffd9de5b08",
         "location": [
             59.948767,
             30.327582
@@ -133,7 +133,7 @@
             "2:50",
             "4:55"
         ],
-        "id": "f32e54c5-6b4c-420c-9d78-5b4e6a3471e3",
+        "id": "e8630a30-f993-42d7-844d-a19ffcb73834",
         "location": [
             59.941213,
             30.30817
@@ -159,7 +159,7 @@
             "2:45",
             "5:00"
         ],
-        "id": "3463a6d2-f4c2-412a-b657-2b71e8e175d7",
+        "id": "dcaaed3e-86f8-4955-a032-05431193fac1",
         "location": [
             59.934691,
             30.289538
@@ -181,7 +181,7 @@
         "start_land_trans": [
             "4:55"
         ],
-        "id": "888d36cb-928e-4680-8e16-44d314653d17",
+        "id": "3f82a404-9739-4640-8f97-de67eaa62e84",
         "location": [
             59.94627,
             30.303489
@@ -207,7 +207,7 @@
             "2:55",
             "4:55"
         ],
-        "id": "a9a781ed-84f5-41a8-9bb6-22510166e1c7",
+        "id": "d87a4098-63db-4d72-802a-83e86915d74e",
         "location": [
             59.949038,
             30.285449
@@ -221,7 +221,7 @@
         "start_water_trans": "NULL",
         "stop_water_trans": "NULL",
         "start_land_trans": "NULL",
-        "id": "3e6cfdf0-9ecc-48a9-9679-7644384daee3",
+        "id": "4387ea48-d89d-449c-85e4-c1f192f300c6",
         "location": [
             59.957958,
             30.337383
@@ -235,7 +235,7 @@
         "start_water_trans": "NULL",
         "stop_water_trans": "NULL",
         "start_land_trans": "NULL",
-        "id": "ea179f64-026b-42cb-93b2-418388af35cb",
+        "id": "7e53481d-0b7f-4cab-aff0-fa4e0302f8d4",
         "location": [
             59.967917,
             30.334661
@@ -249,7 +249,7 @@
         "start_water_trans": "NULL",
         "stop_water_trans": "NULL",
         "start_land_trans": "NULL",
-        "id": "7cc78a7c-6718-4f20-b337-602025cb2d22",
+        "id": "8b8e6797-2d75-42cc-9ac8-33b10c816cb4",
         "location": [
             59.967917,
             30.334661

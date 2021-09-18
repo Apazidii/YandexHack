@@ -35,10 +35,11 @@ def get_random_id():
 # Обрабатывает время
 # разбиваея строку на массив подстрок по 4 символа
 def strf(s):
-    l = len(s)
     arr = []
-    for i in range(0, l, 4):
-        arr.append(s[i:i+4])
+    while (":" in s):
+        k = s.find(":")
+        arr.append(s[:k+3])
+        s = s[k+3:]
     return arr
 
 

@@ -1,10 +1,11 @@
-s1 = "1234"
-s2 = "12345678"
+s1 = "1:34"
+s2 = "12:453:124:2010:30"
 def strf(s):
-    l = len(s)
     arr = []
-    for i in range(0, l, 4):
-        arr.append(s[i:i+4])
+    while (":" in s):
+        k = s.find(":")
+        arr.append(s[:k+3])
+        s = s[k+3:]
     return arr
 print(strf(s1))
 print(strf(s2))
