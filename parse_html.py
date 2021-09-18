@@ -43,15 +43,18 @@ def strf(s):
 
 
 loc = {
-    "Володарский" :         [59.877646, 30.453283],
-    "Александра Невского" : [59.925655, 30.395755],
-    "Большеохтинский" :     [59.942620, 30.401585],
-    "Литейный" :            [59.951776, 30.349582],
-    "Троицкий" :            [59.948767, 30.327582],
-    "Дворцовый":            [59.941213, 30.308170],
-    "Благовещенский" :      [59.934691, 30.289538],
-    "Биржевой" :            [59.946270, 30.303489],
-    "Тучков" :              [59.949038, 30.285449]
+    "Володарский"           : [59.877646, 30.453283],
+    "Александра Невского"   : [59.925655, 30.395755],
+    "Большеохтинский"       : [59.942620, 30.401585],
+    "Литейный"              : [59.951776, 30.349582],
+    "Троицкий"              : [59.948767, 30.327582],
+    "Дворцовый"             : [59.941213, 30.308170],
+    "Благовещенский"        : [59.934691, 30.289538],
+    "Биржевой"              : [59.946270, 30.303489],
+    "Тучков"                : [59.949038, 30.285449],
+    "Сампсониевский"        : [59.957958, 30.337383],
+    "Гренадерский"          : [59.967917, 30.334661],
+    "Кантемировский"        : [59.978489, 30.321815]
 }
 
 def razbiv_bridge(bridge):
@@ -104,6 +107,44 @@ def parse_bridges():
         cl.id = get_random_id()
         cl.location = loc[cl.name]
         res.append(cl)
+
+    cl = Bridge()
+    cl.name = "Сампсониевский"
+    cl.link = "/bridges/sampsonievskij"
+    cl.river = "Большая Невка"
+    cl.stop_land_trans = "NULL"
+    cl.start_water_trans = "NULL"
+    cl.stop_water_trans = "NULL"
+    cl.start_land_trans = "NULL"
+    cl.id = get_random_id()
+    cl.location = loc[cl.name]
+    res.append(cl)
+
+    cl = Bridge()
+    cl.name = "Гренадерский"
+    cl.link = "/bridges/kantemirovskij"
+    cl.river = "Большая Невка"
+    cl.stop_land_trans = "NULL"
+    cl.start_water_trans = "NULL"
+    cl.stop_water_trans = "NULL"
+    cl.start_land_trans = "NULL"
+    cl.id = get_random_id()
+    cl.location = loc[cl.name]
+    res.append(cl)
+
+    cl = Bridge()
+    cl.name = "Гренадерский"
+    cl.link = "/bridges/grenaderskij"
+    cl.river = "Большая Невка"
+    cl.stop_land_trans = "NULL"
+    cl.start_water_trans = "NULL"
+    cl.stop_water_trans = "NULL"
+    cl.start_land_trans = "NULL"
+    cl.id = get_random_id()
+    cl.location = loc[cl.name]
+    res.append(cl)
+
+
 
     return res
 
