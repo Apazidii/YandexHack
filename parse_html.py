@@ -6,15 +6,15 @@ import uuid
 
 
 class Bridge:
-
     # Времена начала/прекращения водного и назменого транспорта
-    stop_land_trans     = []
-    stop_water_trans    = []
-    start_land_trans    = []
-    start_water_trans   = []
+    stop_land_trans = []
+    stop_water_trans = []
+    start_land_trans = []
+    start_water_trans = []
 
     # Название моста
     name = "nu tipa most"
+    fullname = "most nu tipa most"
 
     # Название реки
     river = "reka"
@@ -28,35 +28,38 @@ class Bridge:
     # Местоположение
     location = []
 
+
 # Возвращает уникальный id для моста
-def get_random_id():
+def get_random_id() -> str:
     return str(uuid.uuid4())
+
 
 # Обрабатывает время
 # разбиваея строку на массив подстрок по 4 символа
-def strf(s):
+def strf(s) -> list:
     arr = []
     while (":" in s):
         k = s.find(":")
-        arr.append(s[:k+3])
-        s = s[k+3:]
+        arr.append(s[:k + 3])
+        s = s[k + 3:]
     return arr
 
 
 loc = {
-    "Володарский"           : [59.877646, 30.453283],
-    "Александра Невского"   : [59.925655, 30.395755],
-    "Большеохтинский"       : [59.942620, 30.401585],
-    "Литейный"              : [59.951776, 30.349582],
-    "Троицкий"              : [59.948767, 30.327582],
-    "Дворцовый"             : [59.941213, 30.308170],
-    "Благовещенский"        : [59.934691, 30.289538],
-    "Биржевой"              : [59.946270, 30.303489],
-    "Тучков"                : [59.949038, 30.285449],
-    "Сампсониевский"        : [59.957958, 30.337383],
-    "Гренадерский"          : [59.967917, 30.334661],
-    "Кантемировский"        : [59.978489, 30.321815]
+    "Володарский": [[59.877646, 30.453283], "Володарского моста"],
+    "Александра Невского": [[59.925655, 30.395755], "моста Александра Невского"],
+    "Большеохтинский": [[59.942620, 30.401585], "Большеохтинского моста"],
+    "Литейный": [[59.951776, 30.349582], "Литейного моста"],
+    "Троицкий": [[59.948767, 30.327582], "Троицкого моста"],
+    "Дворцовый": [[59.941213, 30.308170], "Дворцового моста"],
+    "Благовещенский": [[59.934691, 30.289538], "Благовещенского моста"],
+    "Биржевой": [[59.946270, 30.303489], "Биржевого моста"],
+    "Тучков": [[59.949038, 30.285449], "Тучкова моста"],
+    "Сампсониевский": [[59.957958, 30.337383], "Сампсониевского моста"],
+    "Гренадерский": [[59.967917, 30.334661], "Гренадерского моста"],
+    "Кантемировский": [[59.978489, 30.321815], "Кантемировского моста"]
 }
+
 
 def razbiv_bridge(bridge):
     res = []
@@ -75,6 +78,7 @@ def razbiv_bridge(bridge):
         res.append(a)
     return res
 
+
 def parse_bridges():
     # Скачивание сайта
     html = urlopen("https://mostotrest-spb.ru/razvodka-mostov").read().decode('utf-8')
@@ -92,7 +96,6 @@ def parse_bridges():
     for i in range(0, 9):
         bridge.pop(-1)
 
-
     # Заполнение классов мостов
     res = []
     l = len(bridge)
@@ -106,7 +109,8 @@ def parse_bridges():
         cl.stop_water_trans = strf(bridge[i + 4].text)
         cl.start_land_trans = strf(bridge[i + 5].text)
         cl.id = get_random_id()
-        cl.location = loc[cl.name]
+        cl.location = loc[cl.name][0]
+        cl.fullname = loc[cl.name][1]
         res.append(cl)
 
     cl = Bridge()
@@ -118,7 +122,8 @@ def parse_bridges():
     cl.stop_water_trans = "NULL"
     cl.start_land_trans = "NULL"
     cl.id = get_random_id()
-    cl.location = loc[cl.name]
+    cl.location = loc[cl.name][0]
+    cl.fullname = loc[cl.name][1]
     res.append(cl)
 
     cl = Bridge()
@@ -130,7 +135,8 @@ def parse_bridges():
     cl.stop_water_trans = "NULL"
     cl.start_land_trans = "NULL"
     cl.id = get_random_id()
-    cl.location = loc[cl.name]
+    cl.location = loc[cl.name][0]
+    cl.fullname = loc[cl.name][1]
     res.append(cl)
 
     cl = Bridge()
@@ -142,45 +148,43 @@ def parse_bridges():
     cl.stop_water_trans = "NULL"
     cl.start_land_trans = "NULL"
     cl.id = get_random_id()
-    cl.location = loc[cl.name]
+    cl.location = loc[cl.name][0]
+    cl.fullname = loc[cl.name][1]
     res.append(cl)
-
-
 
     return res
 
 
-
 arr = parse_bridges()
+
 
 # Функция конвертации класса в словарь
 def f(k):
     return k.__dict__
 
+
 def cat_list(arr):
     l = len(arr)
-    for i in range(1, l-1):
+    for i in range(1, l - 1):
         arr[0] = arr[0] + arr[i]
     return arr[0]
+
 
 # Конвертация массива классов в массив словарей
 # arr = list(map(razbiv_bridge, arr))
 # arr = cat_list(arr)
 arr = list(map(f, arr))
 
-
 # Создание Json и запись его в файл
 
-j = json.dumps(arr, indent=4,ensure_ascii=False).encode("utf-8")
-file = open("data/bridge.json", "w", encoding= "utf-8")
+j = json.dumps(arr, indent=4, ensure_ascii=False).encode("utf-8")
+file = open("data/bridge.json", "w", encoding="utf-8")
 file.write(j.decode())
 file.close()
 
-df = pd.read_json (r'data/bridge.json')
-df.to_csv (r'data/bridge.csv', index = None)
+df = pd.read_json(r'data/bridge.json')
+df.to_csv(r'data/bridge.csv', index=None)
 
-
-read_file = pd.read_csv (r'data/bridge.csv')
-read_file.to_excel (r'data/bridge.xlsx', index = None, header=True)
+read_file = pd.read_csv(r'data/bridge.csv')
+read_file.to_excel(r'data/bridge.xlsx', index=None, header=True)
 file.close()
-
