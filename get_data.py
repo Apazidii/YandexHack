@@ -9,7 +9,7 @@ def get_data(bridge_name):
         endpoint="grpcs://ydb.serverless.yandexcloud.net:2135",
         database="/ru-central1/b1g2vfpb61j21c575ok3/etn03lo383ndqufkrivb",
         credentials=ydb.iam.ServiceAccountCredentials.from_file(
-            '~/.ydb/sa.json',
+            './sa.json',
         )
     )
 
