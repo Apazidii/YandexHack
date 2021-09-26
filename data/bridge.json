@@ -19,7 +19,7 @@
             "3:45",
             "5:45"
         ],
-        "id": "8c3be8f5-6ae1-4d29-8e6d-c8ce7a56692b",
+        "id": "5aed2b9a-0564-4449-827f-66179c479e89",
         "location": [
             59.877646,
             30.453283
@@ -42,7 +42,7 @@
         "start_land_trans": [
             "5:10"
         ],
-        "id": "ab7febdd-0b04-4f48-84e0-b0a571d9ace0",
+        "id": "bf3504f9-227f-4063-a215-814d4374adbb",
         "location": [
             59.925655,
             30.395755
@@ -65,7 +65,7 @@
         "start_land_trans": [
             "5:00"
         ],
-        "id": "d86234aa-4a90-437e-8ac1-8fd849bb1548",
+        "id": "84231927-bac9-4a9e-a076-86d96877756c",
         "location": [
             59.94262,
             30.401585
@@ -88,7 +88,7 @@
         "start_land_trans": [
             "4:45"
         ],
-        "id": "e266c40d-4115-455d-a19c-4171f0a5b4a1",
+        "id": "20e246dc-9ac1-44da-b11a-f2af375be889",
         "location": [
             59.951776,
             30.349582
@@ -111,7 +111,7 @@
         "start_land_trans": [
             "4:50"
         ],
-        "id": "21f72354-ac2f-4010-ba7e-f43c348fabd9",
+        "id": "9c547498-948d-44eb-87b5-59ea8272fc01",
         "location": [
             59.948767,
             30.327582
@@ -138,7 +138,7 @@
             "2:50",
             "4:55"
         ],
-        "id": "349dc013-8533-4c4c-bb8c-556e2bf09605",
+        "id": "7a5d5bfb-e4c1-49b3-ae52-860610683ffc",
         "location": [
             59.941213,
             30.30817
@@ -165,7 +165,7 @@
             "2:45",
             "5:00"
         ],
-        "id": "068efe14-84f3-443e-9454-0a75ac03f3be",
+        "id": "d15932f7-89b8-416a-afac-ddec9b41c30b",
         "location": [
             59.934691,
             30.289538
@@ -188,7 +188,7 @@
         "start_land_trans": [
             "4:55"
         ],
-        "id": "30113a9c-7469-4d19-bc95-d01be6bbba03",
+        "id": "01ac8977-e637-4298-bffc-703b8b489d17",
         "location": [
             59.94627,
             30.303489
@@ -215,7 +215,7 @@
             "2:55",
             "4:55"
         ],
-        "id": "8b66fda0-125b-4dcb-86d9-4f66c831d92f",
+        "id": "a02edf58-5616-44cd-a66a-ead1d5599ea2",
         "location": [
             59.949038,
             30.285449
@@ -226,11 +226,19 @@
         "name": "Сампсониевский",
         "link": "/bridges/sampsonievskij",
         "river": "Большая Невка",
-        "stop_land_trans": "NULL",
-        "start_water_trans": "NULL",
-        "stop_water_trans": "NULL",
-        "start_land_trans": "NULL",
-        "id": "99bdbbca-ceaf-4044-b832-d9221137cc59",
+        "stop_land_trans": [
+            "1:30"
+        ],
+        "start_water_trans": [
+            "1:30"
+        ],
+        "stop_water_trans": [
+            "4:30"
+        ],
+        "start_land_trans": [
+            "4:30"
+        ],
+        "id": "d9593329-2b7f-4bb4-a63c-5ccf4cdbda8d",
         "location": [
             59.957958,
             30.337383
@@ -241,11 +249,19 @@
         "name": "Гренадерский",
         "link": "/bridges/kantemirovskij",
         "river": "Большая Невка",
-        "stop_land_trans": "NULL",
-        "start_water_trans": "NULL",
-        "stop_water_trans": "NULL",
-        "start_land_trans": "NULL",
-        "id": "9fc41f50-59e1-4c7e-9d2a-be28118b199b",
+        "stop_land_trans": [
+            "1:30"
+        ],
+        "start_water_trans": [
+            "1:30"
+        ],
+        "stop_water_trans": [
+            "4:30"
+        ],
+        "start_land_trans": [
+            "4:30"
+        ],
+        "id": "3954a633-a687-404a-9ad9-d379c1752c69",
         "location": [
             59.967917,
             30.334661
@@ -253,18 +269,26 @@
         "fullname": "Гренадерского моста"
     },
     {
-        "name": "Гренадерский",
-        "link": "/bridges/grenaderskij",
+        "name": "Кантемировский",
+        "link": "/bridges/kantemirovskij",
         "river": "Большая Невка",
-        "stop_land_trans": "NULL",
-        "start_water_trans": "NULL",
-        "stop_water_trans": "NULL",
-        "start_land_trans": "NULL",
-        "id": "632d74f3-fd4d-4a6f-9f0c-e29afe8344d6",
-        "location": [
-            59.967917,
-            30.334661
+        "stop_land_trans": [
+            "1:30"
         ],
-        "fullname": "Гренадерского моста"
+        "start_water_trans": [
+            "1:30"
+        ],
+        "stop_water_trans": [
+            "4:30"
+        ],
+        "start_land_trans": [
+            "4:30"
+        ],
+        "id": "5d4085ca-a34b-406f-ba89-27a5e65973a5",
+        "location": [
+            59.978489,
+            30.321815
+        ],
+        "fullname": "Кантемировского моста"
     }
 ]

@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import json
-import pandas as pd
+# import pandas as pd
 import uuid
 
 
@@ -140,8 +140,8 @@ def parse_bridges():
     res.append(cl)
 
     cl = Bridge()
-    cl.name = "Гренадерский"
-    cl.link = "/bridges/grenaderskij"
+    cl.name = "Кантемировский"
+    cl.link = "/bridges/kantemirovskij"
     cl.river = "Большая Невка"
     cl.stop_land_trans = "NULL"
     cl.start_water_trans = "NULL"
@@ -153,9 +153,6 @@ def parse_bridges():
     res.append(cl)
 
     return res
-
-
-arr = parse_bridges()
 
 
 # Функция конвертации класса в словарь
@@ -170,21 +167,23 @@ def cat_list(arr):
     return arr[0]
 
 
-# Конвертация массива классов в массив словарей
-# arr = list(map(razbiv_bridge, arr))
-# arr = cat_list(arr)
-arr = list(map(f, arr))
+def start_parsing():
+    arr = parse_bridges()
+    # Конвертация массива классов в массив словарей
+    # arr = list(map(razbiv_bridge, arr))
+    # arr = cat_list(arr)
+    arr = list(map(f, arr))
 
-# Создание Json и запись его в файл
+    # Создание Json и запись его в файл
 
-j = json.dumps(arr, indent=4, ensure_ascii=False).encode("utf-8")
-file = open("data/bridge.json", "w", encoding="utf-8")
-file.write(j.decode())
-file.close()
+    j = json.dumps(arr, indent=4, ensure_ascii=False).encode("utf-8")
+    file = open("data/bridge.json", "w", encoding="utf-8")
+    file.write(j.decode())
+    file.close()
 
-df = pd.read_json(r'data/bridge.json')
-df.to_csv(r'data/bridge.csv', index=None)
+    # df = pd.read_json(r'data/bridge.json')
+    # df.to_csv(r'data/bridge.csv', index=None)
 
-read_file = pd.read_csv(r'data/bridge.csv')
-read_file.to_excel(r'data/bridge.xlsx', index=None, header=True)
-file.close()
+    # read_file = pd.read_csv(r'data/bridge.csv')
+    # read_file.to_excel(r'data/bridge.xlsx', index=None, header=True)
+    # file.close()
