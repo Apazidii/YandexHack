@@ -28,33 +28,34 @@ def time_to_text(now, most, ra, fullname):
     res = ""
 
     move = ["разведения", "сведения"]
+    move2 = ["сведен", "разведен"]
     t = [datetime.timedelta(hours=int(most[0][:most[0].find(":")]), minutes=int(most[0][most[0].find(":") + 1:])),
          datetime.timedelta(hours=int(most[1][:most[1].find(":")]), minutes=int(most[1][most[1].find(":") + 1:]))]
     rt = [(':'.join(str(t[0]).split(':')[:2])), (':'.join(str(t[1]).split(':')[:2])) ]
     c = t[ra] - now
     tm = int(c.seconds / 60)
     if tm == 30:
-        res = f"До {move[ra]} {fullname} осталось ровно полчаса, в {rt[ra]}"
+        res = f"Сейчас мост {move2[ra]}, до {move[ra]} {fullname} осталось ровно полчаса, в {rt[ra]}"
     elif tm < 30 and tm >= 28:
-        res = f"До {move[ra]} {fullname} осталось чуть меньше чем через полчаса, в {rt[ra]}"
+        res = f"Сейчас мост {move2[ra]}, до {move[ra]} {fullname} осталось чуть меньше чем через полчаса, в {rt[ra]}"
     elif tm > 30 and tm <= 32:
-        res = f"До {move[ra]} {fullname} осталось чуть больше чем через полчаса, в {rt[ra]}"
+        res = f"Сейчас мост {move2[ra]}, до {move[ra]} {fullname} осталось чуть больше чем через полчаса, в {rt[ra]}"
     elif tm == 60:
-        res = f"До {move[ra]} {fullname} остался ровно час, в {rt[ra]}"
+        res = f"Сейчас мост {move2[ra]}, до {move[ra]} {fullname} остался ровно час, в {rt[ra]}"
     elif tm > 60 and tm <= 65:
         # res = f"До {move[ra]} {fullname} осталось чуть больше чем через час, в {rt[ra]}"
-        res = f"До {move[ra]} {fullname} остался час, в {rt[ra]}"
+        res = f"Сейчас мост {move2[ra]}, до {move[ra]} {fullname} остался час, в {rt[ra]}"
     elif tm < 60 and tm >= 55:
         # res = f"До {move[ra]} {fullname} осталось чуть меньше чем через час, в {rt[ra]}"
-        res = f"До {move[ra]} {fullname} остался час, в r{t[ra]}"
+        res = f"Сейчас мост {move2[ra]}, до {move[ra]} {fullname} остался час, в r{t[ra]}"
     elif tm == 90:
-        res = f"До {move[ra]} {fullname} осталось ровно полторачаса, в {rt[ra]}"
+        res = f"Сейчас мост {move2[ra]}, до {move[ra]} {fullname} осталось ровно полторачаса, в {rt[ra]}"
     elif tm < 90 and tm >= 80:
         # res = f"До {move[ra]} {fullname} осталось чуть меньше чем через полторачаса, в {rt[ra]}"
-        res = f"До {move[ra]} {fullname} осталось полторачаса, в {rt[ra]}"
+        res = f"Сейчас мост {move2[ra]}, до {move[ra]} {fullname} осталось полторачаса, в {rt[ra]}"
     elif tm > 90 and tm <= 100:
         # res = f"До {move[ra]} {fullname} осталось чуть больше чем через полторачаса, в {rt[ra]}"
-        res = f"До {move[ra]} {fullname} осталось полторачаса, в {rt[ra]}"
+        res = f"Сейчас мост {move2[ra]}, до {move[ra]} {fullname} осталось полторачаса, в {rt[ra]}"
     else:
         if tm > 60 and tm < 120:
             ok = 5
@@ -71,9 +72,9 @@ def time_to_text(now, most, ra, fullname):
         m = int(ntm % 60)
         h = int(ntm / 60)
         if get_ending(h) == "":
-            res = f"До {move[ra]} {fullname} остался "
+            res = f"Сейчас мост {move2[ra]}, до {move[ra]} {fullname} остался "
         else:
-            res = f"До {move[ra]} {fullname} осталось "
+            res = f"Сейчас мост {move2[ra]}, до {move[ra]} {fullname} осталось "
         if (h != 0):
             res = res + f"{str(h)} час{get_ending(h)}"
         if (m != 0):
