@@ -22,7 +22,7 @@ def get_data(bridge_name):
 
     def get_bridges_table_query(session):
         return session.transaction().execute(
-            "SELECT bridge_name, fullname, bridge_alt, bridge_long FROM bridges_table WHERE bridge_name='" + bridge_name + "'",
+            "SELECT bridge_name, fullname, fullname2, bridge_alt, bridge_long FROM bridges_table WHERE bridge_name='" + bridge_name + "'",
             commit_tx=True,
             settings=ydb.BaseRequestSettings().with_timeout(3).with_operation_timeout(2)
         )
@@ -33,21 +33,23 @@ def get_data(bridge_name):
             commit_tx=True,
             settings=ydb.BaseRequestSettings().with_timeout(3).with_operation_timeout(2)
         )
-
+    
     with driver:
         driver.wait(fail_fast=True, timeout=5)
 
         with ydb.SessionPool(driver) as pool:
             b_id = pool.retry_operation_sync(get_bridge_id)[0].rows[0]["bridge_id"]
             b_table = pool.retry_operation_sync(get_bridges_table_query)[0].rows[0]
-            #print(result[0].rows[0]["bridge_id"])
             b_time = pool.retry_operation_sync(get_bridges_time)[0].rows
 
             result = {}
             result["name"] = b_table['bridge_name']
             result["fullname"] = b_table["fullname"]
+            result["fullname2"] = b_table["fullname2"]
             result["coord"] = [b_table["bridge_alt"], b_table["bridge_long"]]
             result["time"] = []
             for el in b_time:
                 result["time"].append(list(el.values()))
             return result
+
+print(get_data("Дворцовый"))
