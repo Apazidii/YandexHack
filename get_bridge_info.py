@@ -36,6 +36,10 @@ def get_bridges_info():
             open_br_dict = {}
             close_br_dict = {}
             for i in range(len(query)):
+                if (query[i]['bridge_close_time'] == 'NULL' or query[i]['bridge_open_time'] == 'NULL'):
+                    open_bridges_name.append(query[i]['bridge_name'])
+                    open_br_dict[query[i]['bridge_name']] = -1
+                    continue
                 bridge_open_time_seconds = int(query[i]['bridge_close_time'].split(":")[0]) * 3600 + int(query[i]['bridge_close_time'].split(":")[1]) * 60
                 bridge_close_time_seconds = int(query[i]['bridge_open_time'].split(":")[0]) * 3600 + int(query[i]['bridge_open_time'].split(":")[1]) * 60
                 if seconds >= bridge_open_time_seconds and seconds <= bridge_close_time_seconds:
@@ -60,7 +64,6 @@ def get_bridges_info():
 
             open_br_dict = sort_br(open_br_dict)
             close_br_dict = sort_br(close_br_dict)
-            print(open_bridges_name, close_bridges_name)
             open_bridges_name = list(open_br_dict.keys())
             close_bridges_name = list(close_br_dict.keys())
             
