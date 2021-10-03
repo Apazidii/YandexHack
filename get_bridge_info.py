@@ -32,14 +32,15 @@ def get_bridges_info():
             open_bridges_name = []
             close_bridges_name = []
             for i in range(len(query)):
-                bridge_close_time_seconds = int(query[i]['bridge_close_time'].split(":")[0]) * 3600 + int(query[i]['bridge_close_time'].split(":")[1]) * 60
-                bridge_open_time_seconds = int(query[i]['bridge_open_time'].split(":")[0]) * 3600 + int(query[i]['bridge_open_time'].split(":")[1]) * 60
-                if seconds < bridge_close_time_seconds or seconds >= bridge_open_time_seconds:
-                    if query[i]['bridge_name'] not in open_bridges_name and query[i]['bridge_name'] not in close_bridges_name:
-                        open_bridges_name.append(query[i]['bridge_name'])
-                else:
-                    if query[i]['bridge_name'] not in open_bridges_name and query[i]['bridge_name'] not in close_bridges_name:
+                bridge_open_time_seconds = int(query[i]['bridge_close_time'].split(":")[0]) * 3600 + int(query[i]['bridge_close_time'].split(":")[1]) * 60
+                bridge_close_time_seconds = int(query[i]['bridge_open_time'].split(":")[0]) * 3600 + int(query[i]['bridge_open_time'].split(":")[1]) * 60
+                if seconds >= bridge_open_time_seconds and seconds <= bridge_close_time_seconds:
+                    if query[i]['bridge_name'] not in close_bridges_name:
                         close_bridges_name.append(query[i]['bridge_name'])
+
+            for i in range(len(query)):
+                if (query[i]['bridge_name'] not in open_bridges_name) and (query[i]['bridge_name'] not in close_bridges_name):
+                    open_bridges_name.append(query[i]['bridge_name'])
 
             return open_bridges_name, close_bridges_name
 
