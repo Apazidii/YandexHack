@@ -3,6 +3,7 @@ import ydb
 import ydb.iam
 import json
 import uuid
+import pytz
 from datetime import datetime
 
 def get_bridges_info():
@@ -26,7 +27,7 @@ def get_bridges_info():
 
         with ydb.SessionPool(driver) as pool:
             query = pool.retry_operation_sync(query)[0].rows
-            current_time = datetime.now()
+            current_time = datetime.now(pytz.timezone('Europe/Moscow'))
             seconds = int(current_time.hour) * 3600 + int(current_time.minute) * 60
             
             open_bridges_name = []
